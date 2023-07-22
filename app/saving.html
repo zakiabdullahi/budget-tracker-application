@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="parent">
+      <div class="flex-container">
+        <div class="side-bar">
+          <div class="dashboard flex">
+            <img src="./images/dashboard.png" alt="" />
+
+            <a href="./index.html">Dashboard</a>
+          </div>
+          <div class="Budget flex">
+            <img src="./images/budget.svg" alt="" />
+            <a href="./budget.html">Budget</a>
+          </div>
+          <div class="category flex">
+            <img src="./images/category.svg" alt="" />
+            <a href="./category.html">Category</a>
+          </div>
+          <div class="Income flex">
+            <img src="./images/income.svg" alt="" />
+            <a href="./income.html">Income</a>
+          </div>
+          <div class="Expense flex">
+            <img src="./images/expense.svg" alt="" />
+            <a href="./expense.html">Expense</a>
+          </div>
+          <div class="Saving flex">
+            <img src="./images/savings.svg" alt="" />
+            <a href="./saving.html">Saving</a>
+          </div>
+        </div>
+        <div class="content">
+          <div class="head">
+            <div class="user">
+              <span id="currentname">Ahmed Ali</span>
+              <img src="./images/user.png" alt="" />
+              <a class="btn" href="../login.html">Logout</a>
+            </div>
+          </div>
+          <section class="content-info">
+            <h1>Saving</h1>
+
+            <form>
+              <label for="">budget Name</label>
+              <select name="" id="budgetId"></select>
+              <label for="">amount</label>
+              <input type="number" id="amount" placeholder="enter amount" />
+              <label for="">date</label>
+              <input type="date" id="date" />
+              <button class="btn" id="addSaving">+ Add Saving</button>
+            </form>
+
+            <div class="SavingContainer"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <script src="./saving.js"></script>
+  </body>
+</html>

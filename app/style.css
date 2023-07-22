@@ -1,0 +1,305 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #bb7893;
+  color: #fff;
+  cursor: pointer;
+}
+
+section.parent {
+  /* padding: 20px; */
+  width: 100%;
+  height: 250vh;
+  background-color: #cf97aa;
+}
+section.parent .flex-container {
+  height: 100%;
+  display: flex;
+  /* gap: 10px; */
+}
+section.parent .flex-container .side-bar {
+  padding: 20px;
+  width: 20%;
+  height: 100%;
+  background-color: #bb7893;
+  /* border-radius: 10px; */
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+section.parent .flex-container .content .user {
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+section.parent .flex-container .side-bar .flex {
+  display: flex;
+  gap: 25px;
+}
+section.parent .flex-container .side-bar a {
+  text-decoration: none;
+  font-size: 22px;
+  color: #000;
+}
+section.parent .flex-container .content {
+  position: relative;
+  /* padding: 20px; */
+  /* border-radius: 10px; */
+  width: 80%;
+  background-color: #f5ebef;
+  height: 100%;
+}
+.content-info {
+  padding: 20px;
+  /* border-radius: 10px; */
+  /* width: 80%;
+  background-color: #f5ebef;
+  height: 100%; */
+}
+section.parent .flex-container .content .head {
+  padding: 10px;
+  width: 100%;
+  height: 60px;
+  background-color: #e1c0cd;
+  display: flex;
+  justify-content: end;
+}
+section.parent .flex-container .content .logout {
+  /* width: 100px; */
+  /* height: 40px; */
+  /* padding: 20px; */
+  /* width: 100%;
+  height: 60px;
+  background-color: #e1c0cd; */
+  /* display: flex;
+  gap: 10px; */
+  /* justify-content: end; */
+}
+
+section.parent .flex-container .content h1 {
+  width: 6%;
+  padding: 10px 0px;
+  border-bottom: 2px solid #000;
+}
+
+section.parent .flex-container .content form {
+  margin-top: 30px;
+
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+section.parent .flex-container .content form label {
+  /* padding: 0px 20px; */
+}
+section.parent .flex-container .content form input {
+  padding: 10px 15px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+section.parent .flex-container .content form textarea {
+  height: 120px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+section.parent .flex-container .content form select {
+  padding: 10px 15px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+section.parent .flex-container .content form .btn {
+  width: 40%;
+}
+
+section.parent .flex-container .content .budgets {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .recent-Income {
+  padding: 20px;
+  background: #e1c0cd;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .recent-Expense {
+  padding: 20px;
+  background: #e1c0cd;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .recent-item {
+  width: 45%;
+  padding: 20px;
+  height: 60px;
+  background-color: #cf97aa;
+  border-radius: 10px;
+  display: flex;
+  gap: 25px;
+}
+section.parent .flex-container .content .categories {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .IncomeContainer {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .ExpsenseContainer {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .SavingContainer {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .budget {
+  width: 90%;
+  padding: 20px;
+  height: 60px;
+  background-color: #e1c0cd;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+/* budget */
+section.parent .flex-container .content .budget span {
+  width: 30%;
+  display: flex;
+  gap: 20px;
+}
+section.parent .flex-container .content .category {
+  width: 70%;
+  padding: 20px;
+  height: 60px;
+  background-color: #e1c0cd;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+section.parent .flex-container .content .income {
+  width: 70%;
+  padding: 20px;
+  height: 60px;
+  background-color: #e1c0cd;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+section.parent .flex-container .content .expense {
+  width: 70%;
+  padding: 20px;
+  height: 60px;
+  background-color: #e1c0cd;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+section.parent .flex-container .content .category span {
+  width: 15%;
+  display: flex;
+  gap: 10px;
+}
+section.parent .flex-container .content .income span {
+  width: 25%;
+  display: flex;
+  gap: 10px;
+}
+section.parent .flex-container .content .expense span {
+  width: 25%;
+  display: flex;
+  gap: 10px;
+}
+section.parent .flex-container .content .category p {
+  width: 60%;
+  display: flex;
+  gap: 10px;
+}
+section.parent .flex-container .content .saving {
+  width: 60%;
+  padding: 20px;
+  height: 60px;
+  background-color: #e1c0cd;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+section.parent .flex-container .content .expense {
+  width: 65%;
+  padding: 20px;
+  height: 60px;
+  background-color: #e1c0cd;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+section.parent .flex-container .content .budget > * {
+  margin-inline: 10px;
+}
+
+/* dashboard */
+
+section.parent .flex-container .content .cards {
+  width: 100%;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+section.parent .flex-container .content .card {
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  width: 400px;
+  height: 200px;
+  background: #e1c0cd;
+  border-radius: 5px;
+}
+section.parent .flex-container .content .card h2 {
+  color: #515151;
+  font-size: 34px;
+}
+section.parent .flex-container .content .card span {
+  color: #989898;
+  font-size: 40px;
+  font-weight: 300;
+}
