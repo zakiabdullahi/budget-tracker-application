@@ -45,6 +45,9 @@ section.parent .flex-container .content .user {
   align-items: center;
   gap: 15px;
 }
+section.parent .flex-container .content .user a {
+  text-decoration: none;
+}
 section.parent .flex-container .side-bar .flex {
   display: flex;
   gap: 25px;
