@@ -292,7 +292,7 @@ section.parent .flex-container .content .card {
   justify-content: center;
   gap: 15px;
   padding: 20px;
-  width: 400px;
+  width: 100%;
   height: 200px;
   background: #e1c0cd;
   border-radius: 5px;

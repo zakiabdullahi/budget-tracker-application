@@ -167,6 +167,8 @@ const showErrAmount = (input, message) => {
     input.style.border = "2px solid red";
 
 
+
+
 }
 const showSuccess = (input, message) => {
 
@@ -176,11 +178,11 @@ const showSuccess = (input, message) => {
     // let small = parent.querySelector("small");
     // small.style.display = "block";
     // small.innerHTML = message;
+    setTimeout(() => {
+        input.style.border = "none";
 
-    // setTimeout(() => {
-    //     input.style.border = "none";
+    }, 1000)
 
-    // }, 1000)
 
 }
 
