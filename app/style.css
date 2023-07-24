@@ -215,6 +215,12 @@ section.parent .flex-container .content .category {
   display: flex;
   gap: 15px;
 }
+section.parent .flex-container .content .category span {
+  width: 20%;
+}
+section.parent .flex-container .content .category p {
+  width: 40%;
+}
 section.parent .flex-container .content .income {
   width: 70%;
   padding: 20px;
@@ -224,6 +230,9 @@ section.parent .flex-container .content .income {
   display: flex;
   gap: 15px;
 }
+section.parent .flex-container .content .income span {
+  width: 15%;
+}
 section.parent .flex-container .content .expense {
   width: 70%;
   padding: 20px;
@@ -232,6 +241,9 @@ section.parent .flex-container .content .expense {
   border-radius: 10px;
   display: flex;
   gap: 15px;
+}
+section.parent .flex-container .content .expense span {
+  width: 15%;
 }
 section.parent .flex-container .content .category span {
   width: 15%;
@@ -261,6 +273,11 @@ section.parent .flex-container .content .saving {
   border-radius: 10px;
   display: flex;
   gap: 15px;
+}
+section.parent .flex-container .content .saving span {
+  display: flex;
+  gap: 10px;
+  width: 25%;
 }
 section.parent .flex-container .content .expense {
   width: 65%;

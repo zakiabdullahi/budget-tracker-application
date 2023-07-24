@@ -45,8 +45,9 @@ const loadData = () => {
             SavingContainer.innerHTML += `
              <div class="saving">
                   <span>${item.budgetId}</span>
-                  <span>${item.amount}</span>
-                  <span>${item.date}</span>
+                  <span> <i class="fa-solid fa-dollar-sign"></i>${item.amount}</span>
+                  <span> <i class="fa-solid fa-calendar-days"></i>${item.date}</span>
+             
                 </div>
     
          `
