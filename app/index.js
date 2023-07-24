@@ -111,8 +111,12 @@ const loadIncome = () => {
             recentIncome.innerHTML += `
              <div class="recent-item">
                   <span>${item.budgetId}</span>
-                  <span>${item.date}</span>
-                  <span>${item.amount}</span>
+                  
+
+                  <span> <i class="fa-solid fa-calendar-days"></i>${item.date}</span>
+                  <span> <i class="fa-solid fa-dollar-sign"></i>${item.amount}</span>
+
+
                 </div>
     
     
@@ -139,8 +143,8 @@ const loadExpense = () => {
              <div class="recent-item">
              <span>${item.budgetId}</span>
              <span>${item.categoryId}</span>
-             <span>${item.date}</span>
-             <span>${item.amount}</span>
+             <span> <i class="fa-solid fa-calendar-days"></i>${item.date}</span>
+             <span> <i class="fa-solid fa-dollar-sign"></i>${item.amount}</span>
         </div>`
         }
 

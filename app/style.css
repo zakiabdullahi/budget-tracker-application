@@ -143,12 +143,16 @@ section.parent .flex-container .content .budgets {
   gap: 10px;
 }
 section.parent .flex-container .content .recent-Income {
+  width: 100%;
   padding: 20px;
   background: #e1c0cd;
   margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+}
+section.parent .flex-container .content .recent-Income span {
+  width: 25%;
 }
 section.parent .flex-container .content .recent-Expense {
   padding: 20px;
@@ -159,13 +163,18 @@ section.parent .flex-container .content .recent-Expense {
   gap: 10px;
 }
 section.parent .flex-container .content .recent-item {
-  width: 45%;
+  width: 70%;
   padding: 20px;
   height: 60px;
   background-color: #cf97aa;
   border-radius: 10px;
   display: flex;
   gap: 25px;
+}
+section.parent .flex-container .content .recent-item span {
+  width: 25%;
+  display: flex;
+  gap: 10px;
 }
 section.parent .flex-container .content .categories {
   margin-top: 100px;
