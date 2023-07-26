@@ -76,8 +76,6 @@ const checkLogin = (input) => {
     let email = input[0];
     let password = input[1];
 
-    checkEmpty([email, password]);
-
 
     let data = getUsers();
 
@@ -85,17 +83,19 @@ const checkLogin = (input) => {
 
     console.log(user);
 
-    // if (!user) {
-
-    //     // showError(email, "");
-    //     // showError(password, "");
+    if (email.value == "" && password.value == "") {
 
 
-    // }
+        // checkEmpty([email, password]);
+        showError(email, "This field is required!");
+        showError(password, "This field is required!");
 
-    if (user) {
 
-        if (email.value !== user.email || password.value !== user.password) {
+
+    } else {
+
+
+        if (!user) {
             showError(email, "");
             showError(password, "");
             iziToast.error({
@@ -103,30 +103,71 @@ const checkLogin = (input) => {
                 message: 'Invalid email or password!',
                 position: 'topRight',
             });
-        } else {
 
-            localStorage.setItem("currentUser", JSON.stringify(user));
-            window.location.href = "./app/index.html";
+
+
+        } else if (user) {
+
+            if (email.value !== user.email || password.value !== user.password) {
+                showError(email, "Invalid email or password!");
+                showError(password, "");
+                iziToast.error({
+                    title: 'Error',
+                    message: 'Invalid email or password!',
+                    position: 'topRight',
+                });
+            } else {
+
+                localStorage.setItem("currentUser", JSON.stringify(user));
+                window.location.href = "./app/index.html";
+
+
+            }
+
 
         }
-
     }
 
-
-
-
-
-
-
-
-
-
 }
+// let user = data.filter(item => item.email === email.value);
+
+// console.log(user)
+
+// if (email.value == "" && password.value == "") {
+//     showError(email, "This field is required!");
+//     showError(password, "This field is required!");
+
+// } else {
+//     if (user.length != "") {
+//         if (email.value !== user[0].email || password.value !== user[0].password) {
+//             showError(email, "Invalid email or password!");
+//             showError(password, "");
+//             iziToast.error({
+//                 title: 'Error',
+//                 message: 'Invalid email or password!',
+//                 position: 'topRight',
+//             });
+//         } else {
+
+//             localStorage.setItem("currentUser", JSON.stringify(user));
+//             window.location.href = "./app/index.html";
+
+
+//         }
 
 
 
+//     } else {
+//         showError(email, "");
+//         showError(password, "");
+//         iziToast.error({
+//             title: 'Error',
+//             message: 'Invalid email or password!',
+//             position: 'topRight',
+//         });
 
-
+//     }
+// }
 
 
 
