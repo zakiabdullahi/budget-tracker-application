@@ -107,38 +107,28 @@ const getId = () => {
 }
 
 
+const showError = (input) => {
 
 
+    console.log(input)
 
-
-const showError = (input, message) => {
-
-
-    // let parent = input.parentElement;
-
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
-
-    input.style.border = "2px solid red";
+    // input.style.border = "2px solid red";
+    input.classList.add("error");
 
 
 }
-const showSuccess = (input, message) => {
+const showSuccess = (input) => {
 
-    input.style.border = "2px solid green";
-    // let parent = input.parentElement;
+    // input.style.border = "2px solid green";
+    input.classList.remove("error");
+    input.classList.add("success");
 
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
-
-    setTimeout(() => {
-        input.style.border = "none";
-
-    }, 1000)
 
 }
+
+
+
+
 
 const checkEmpty = (input) => {
 
@@ -149,10 +139,10 @@ const checkEmpty = (input) => {
 
         if (item.value == "") {
 
-            showError(item, "This field is required!");
+            showError(item);
             // console.log("0")
         } else if (item.value == "choose") {
-            showError(item, "This field is required!");
+            showError(item);
 
         }
 
@@ -201,11 +191,22 @@ const addCatToTheLocalStorage = (data) => {
         categories.push(category);
 
         localStorage.setItem("categories", JSON.stringify(categories));
+        iziToast.success({
+            title: 'Success',
+            message: 'Successfully added A Category!',
+            position: 'topRight',
+
+        });
         name.value = "";
         description.value = "";
-        categoryContainer.innerHTML = "";
+        name.classList.remove("success");
+        description.classList.remove("success");
 
-        loadData();
+        setTimeout(() => {
+
+            categoryContainer.innerHTML = "";
+            loadData();
+        }, 5000)
 
 
 

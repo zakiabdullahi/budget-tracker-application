@@ -158,3 +158,10 @@ form .btn {
 small {
   display: none;
 }
+
+.success {
+  border: 2px solid #3fe93f;
+}
+.error {
+  border: 2px solid #f12222;
+}

@@ -17,6 +17,7 @@ const getUsers = () => {
 
 // getId();
 
+
 const showError = (input, message) => {
 
 
@@ -26,24 +27,24 @@ const showError = (input, message) => {
     small.style.display = "block";
     small.innerHTML = message;
 
-    input.style.border = "2px solid red";
+    // input.style.border = "2px solid red";
+    input.classList.add("error");
 
 
 }
-
 const showSuccess = (input, message) => {
 
-    input.style.border = "2px solid green";
-    // let parent = input.parentElement;
+    // input.style.border = "2px solid green";
+    input.classList.remove("error");
 
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
+    input.classList.add("success");
 
-    setTimeout(() => {
-        input.style.border = "none";
+    let parent = input.parentElement;
 
-    }, 1000)
+    let small = parent.querySelector("small");
+    small.style.display = "block";
+    small.innerHTML = message;
+
 
 }
 
@@ -84,24 +85,39 @@ const checkLogin = (input) => {
 
     console.log(user);
 
-    if (!user) {
+    // if (!user) {
 
-        showError(email, "Invalid email or password!");
-        showError(password, "");
+    //     // showError(email, "");
+    //     // showError(password, "");
 
-    } else {
+
+    // }
+
+    if (user) {
 
         if (email.value !== user.email || password.value !== user.password) {
-            showError(email, "Invalid email or password!");
+            showError(email, "");
             showError(password, "");
+            iziToast.error({
+                title: 'Error',
+                message: 'Invalid email or password!',
+                position: 'topRight',
+            });
         } else {
 
             localStorage.setItem("currentUser", JSON.stringify(user));
             window.location.href = "./app/index.html";
+
         }
 
-
     }
+
+
+
+
+
+
+
 
 
 

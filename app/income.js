@@ -102,34 +102,26 @@ const fillbudget = () => {
 
 }
 fillbudget();
-const showError = (input, message) => {
+
+const showError = (input) => {
 
 
-    // let parent = input.parentElement;
+    console.log(input)
 
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
-
-    input.style.border = "2px solid red";
+    // input.style.border = "2px solid red";
+    input.classList.add("error");
 
 
 }
-const showSuccess = (input, message) => {
+const showSuccess = (input) => {
 
-    input.style.border = "2px solid green";
-    // let parent = input.parentElement;
+    // input.style.border = "2px solid green";
+    input.classList.remove("error");
+    input.classList.add("success");
 
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
-
-    setTimeout(() => {
-        input.style.border = "none";
-
-    }, 1000)
 
 }
+
 
 
 const checkEmpty = (input) => {
@@ -199,12 +191,28 @@ const addIncomeToTheLocalStorage = (data) => {
 
 
         localStorage.setItem("Incomes", JSON.stringify(incomes));
+        iziToast.success({
+            title: 'Success',
+            message: 'Successfully added A Category!',
+            position: 'topRight',
+            timeout: 3000,
+
+        });
         budgetId.value = "";
         date.value = "";
         amount.value = "";
-        IncomeContainer.innerHTML = "";
 
-        loadData();
+        budgetId.classList.remove("success");
+        date.classList.remove("success");
+        amount.classList.remove("success");
+
+        setTimeout(() => {
+
+            IncomeContainer.innerHTML = "";
+
+            loadData();
+
+        }, 3000)
 
 
 

@@ -20,7 +20,7 @@ img {
 section.parent {
   /* padding: 20px; */
   width: 100%;
-  height: 250vh;
+  height: 180vh;
   background-color: #cf97aa;
 }
 section.parent .flex-container {
@@ -150,6 +150,7 @@ section.parent .flex-container .content .recent-Income {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+  border-radius: 5px;
 }
 section.parent .flex-container .content .recent-Income span {
   width: 25%;
@@ -161,6 +162,7 @@ section.parent .flex-container .content .recent-Expense {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+  border-radius: 5px;
 }
 section.parent .flex-container .content .recent-item {
   width: 70%;
@@ -331,4 +333,11 @@ section.parent .flex-container .content .card span {
   color: #989898;
   font-size: 40px;
   font-weight: 300;
+}
+
+.success {
+  border: 2px solid #3fe93f !important;
+}
+.error {
+  border: 2px solid #f12222 !important;
 }

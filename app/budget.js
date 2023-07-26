@@ -90,33 +90,23 @@ console.log(getBudGets());
 
 
 
-const showError = (input, message) => {
+
+const showError = (input) => {
 
 
-    // let parent = input.parentElement;
+    console.log(input)
 
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
-
-    input.style.border = "2px solid red";
+    // input.style.border = "2px solid red";
+    input.classList.add("error");
 
 
 }
+const showSuccess = (input) => {
 
-const showSuccess = (input, message) => {
+    // input.style.border = "2px solid green";
+    input.classList.remove("error");
+    input.classList.add("success");
 
-    input.style.border = "2px solid green";
-    // let parent = input.parentElement;
-
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
-
-    setTimeout(() => {
-        input.style.border = "none";
-
-    }, 1000)
 
 }
 
@@ -130,16 +120,16 @@ const checkEmpty = (input) => {
 
         if (item.value == "") {
 
-            showError(item, "This field is required!");
+            showError(item);
             // console.log("0")
         } else if (item.value == "choose") {
-            showError(item, "This field is required!");
+            showError(item);
 
         }
 
         else {
 
-            showSuccess(item, "");
+            showSuccess(item);
 
 
 
@@ -194,10 +184,22 @@ const addBudgetToTheLocalStorage = (data) => {
 
 
         localStorage.setItem("budgets", JSON.stringify(budgets));
+        iziToast.success({
+            title: 'Success',
+            message: 'Successfully added A budget!',
+            position: 'topRight',
+
+        });
         name.value = "";
         startDate.value = "";
         endDate.value = "";
         amount.value = "";
+
+        name.classList.remove("success");
+        startDate.classList.remove("success");
+        endDate.classList.remove("success");
+        amount.classList.remove("success");
+
         budgetContainer.innerHTML = "";
 
         loadData();

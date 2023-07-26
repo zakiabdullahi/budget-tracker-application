@@ -144,47 +144,44 @@ const fillCategories = () => {
 
 }
 fillCategories();
-const showError = (input, message) => {
+const showError = (input) => {
 
 
-    input.style.border = "2px solid red";
+    console.log(input)
 
-
-}
-const showErrAmount = (input, message) => {
-
-
-    let parent = input.parentElement;
-    // console.log(parent)
-
-    // input.placeholder = message
-
-
-    let label = parent.querySelector("#err");
-    // small.style.display = "block";
-    label.innerHTML = message;
-
-    input.style.border = "2px solid red";
-
-
+    // input.style.border = "2px solid red";
+    input.classList.add("error");
 
 
 }
-const showSuccess = (input, message) => {
+const showSuccess = (input) => {
 
-    input.style.border = "2px solid green";
-    // let parent = input.parentElement;
-
-    // let small = parent.querySelector("small");
-    // small.style.display = "block";
-    // small.innerHTML = message;
-    setTimeout(() => {
-        input.style.border = "none";
-
-    }, 1000)
+    // input.style.border = "2px solid green";
+    input.classList.remove("error");
+    input.classList.add("success");
 
 
 }
+
+// const showErrAmount = (input, message) => {
+
+
+//     let parent = input.parentElement;
+//     // console.log(parent)
+
+//     // input.placeholder = message
+
+
+//     let label = parent.querySelector("#err");
+//     // small.style.display = "block";
+//     label.innerHTML = message;
+
+//     input.style.border = "2px solid red";
+
+
+
+
+// }
 
 
 const checkEmpty = (input) => {
@@ -196,10 +193,10 @@ const checkEmpty = (input) => {
 
         if (item.value == "") {
 
-            showError(item, "This field is required!");
+            showError(item);
             // console.log("0")
         } else if (item.value == "choose") {
-            showError(item, "This field is required!");
+            showError(item);
 
         }
 
@@ -258,12 +255,17 @@ const addExpenseToTheLocalStorage = (data) => {
 
 
 
-    if (budgetId.value !== "" && categoryId.value !== "" && date.value !== "" && amount.value !== "") {
+    if (budgetId.value !== "" && budgetId.value !== "choose" && categoryId.value !== "choose" && date.value !== "" && amount.value !== "") {
 
 
 
         if (amount.value >= total_balance) {
-            showErrAmount(amount, "insufficient balance 🙂");
+            showError(amount);
+            iziToast.error({
+                title: 'Error',
+                message: 'insufficient balance 🙂',
+                position: 'topRight',
+            });
 
         } else {
             let Expense = {
@@ -285,13 +287,28 @@ const addExpenseToTheLocalStorage = (data) => {
 
 
             localStorage.setItem("Expense", JSON.stringify(ExpenseList));
+            iziToast.success({
+                title: 'Success',
+                message: 'Successfully added A Expense!',
+                position: 'topRight',
+                timeout: 3000,
+
+            });
             budgetId.value = "";
             categoryId.value = "";
             date.value = "";
             amount.value = "";
-            ExpsenseContainer.innerHTML = "";
 
-            loadData();
+            budgetId.classList.remove("success");
+            categoryId.classList.remove("success");
+            date.classList.remove("success");
+            amount.classList.remove("success");
+
+            setTimeout(() => {
+                ExpsenseContainer.innerHTML = "";
+
+                loadData();
+            }, 3000)
 
         }
 
