@@ -10,6 +10,13 @@ let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 name.innerHTML = currentUser.name;
 
+const getCategories = () => {
+    let categories = JSON.parse(localStorage.getItem("categories")) || [];
+    return categories;
+}
+console.log(getCategories())
+
+const categoriesData = getCategories();
 const getIncome = () => {
 
     let incomes = JSON.parse(localStorage.getItem("Incomes")) || [];
@@ -120,15 +127,27 @@ loadIncome();
 
 const loadExpense = () => {
 
+    categoriesData.forEach((item) => {
+
+
+    })
+
 
 
     expenseList.forEach(item => {
+
+        const cat = categoriesData.filter((i) => i.id == item.categoryId);
+        console.log("Cat", cat)
+
+
 
         if (item.userId == currentUser.id) {
             expenseReport.innerHTML += `
              <div class="recent-item">
              <span> <i class="fa-solid fa-calendar-days"></i>${item.date}</span>
-             <span>${item.budgetId}</span>
+
+             <span>${cat.length > 0 && cat[0].name} </span>
+
              <span> <i class="fa-solid fa-dollar-sign"></i>${item.amount}</span>
         </div>`
         }

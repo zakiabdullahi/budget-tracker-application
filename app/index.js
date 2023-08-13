@@ -9,7 +9,11 @@ const recentExpense = document.querySelector(".recent-Expense");
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 name.innerHTML = currentUser.name;
-
+const getCategories = () => {
+    let categories = JSON.parse(localStorage.getItem("categories")) || [];
+    return categories;
+}
+const categoriesData = getCategories();
 const getIncome = () => {
 
     let incomes = JSON.parse(localStorage.getItem("Incomes")) || [];
@@ -133,16 +137,19 @@ loadIncome();
 
 const loadExpense = () => {
 
+
     let batch = filtredExpense.slice(Math.max(filtredExpense.length - 5, 0));
     console.log("batch", batch)
 
     batch.forEach(item => {
+        const cat = categoriesData.filter((i) => i.id == item.categoryId);
+        console.log("Cat", cat)
 
         if (item.userId == currentUser.id) {
             recentExpense.innerHTML += `
              <div class="recent-item">
              <span>${item.budgetId}</span>
-             <span>${item.categoryId}</span>
+             <span>${cat.length > 0 && cat[0].name}</span>
              <span> <i class="fa-solid fa-calendar-days"></i>${item.date}</span>
              <span> <i class="fa-solid fa-dollar-sign"></i>${item.amount}</span>
         </div>`
