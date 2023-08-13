@@ -2,8 +2,8 @@ const name = document.querySelector("#currentname");
 const totalIncome = document.querySelector("#totalIncome");
 const totalExpense = document.querySelector("#totalExpense");
 const rev = document.querySelector("#rev");
-const recentIncome = document.querySelector(".recent-Income");
-const recentExpense = document.querySelector(".recent-Expense");
+const incomeReport = document.querySelector(".Income-report");
+const expenseReport = document.querySelector(".expense-report");
 
 
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -83,7 +83,7 @@ const loadIncome = () => {
 
         if (item.userId == currentUser.id) {
 
-            recentIncome.innerHTML += `
+            incomeReport.innerHTML += `
              <div class="recent-item">
              <span> <i class="fa-solid fa-calendar-days"></i>${item.date}</span>
                   <span>${item.budgetId}</span>
@@ -101,7 +101,7 @@ const loadIncome = () => {
 
     })
 
-    recentIncome.innerHTML += `
+    incomeReport.innerHTML += `
     <div class="recent-item">
              <span> </span>
              <span></span>
@@ -125,7 +125,7 @@ const loadExpense = () => {
     expenseList.forEach(item => {
 
         if (item.userId == currentUser.id) {
-            recentExpense.innerHTML += `
+            expenseReport.innerHTML += `
              <div class="recent-item">
              <span> <i class="fa-solid fa-calendar-days"></i>${item.date}</span>
              <span>${item.budgetId}</span>
@@ -137,7 +137,7 @@ const loadExpense = () => {
 
     })
 
-    recentExpense.innerHTML += `
+    expenseReport.innerHTML += `
     <div class="recent-item">
              <span> </span>
              <span></span>
@@ -225,7 +225,7 @@ function PrintIncome() {
     // newWindow.document.write(``);
 
 
-    newWindow.document.write(recentIncome.innerHTML);
+    newWindow.document.write(incomeReport.innerHTML);
 
     newWindow.document.write(`</body></html>`);
 
@@ -291,7 +291,7 @@ function PrintExpense() {
     // newWindow.document.write(``);
 
 
-    newWindow.document.write(recentExpense.innerHTML);
+    newWindow.document.write(expenseReport.innerHTML);
 
     newWindow.document.write(`</body></html>`);
 

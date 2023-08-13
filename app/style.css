@@ -52,10 +52,18 @@ section.parent .flex-container .content .user {
 section.parent .flex-container .content .user a {
   text-decoration: none;
 }
+/* section.parent .flex-container .side-bar .flex {
+  display: flex;
+  gap: 25px;
+} */
 section.parent .flex-container .side-bar .flex {
   display: flex;
   gap: 25px;
 }
+section.parent .flex-container .side-bar li {
+  list-style: none;
+}
+
 section.parent .flex-container .side-bar a {
   text-decoration: none;
   font-size: 22px;
@@ -77,6 +85,9 @@ section.parent .flex-container .content {
   height: 100%; */
 }
 section.parent .flex-container .content .head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   padding: 10px;
   width: 100%;
   height: 60px;
@@ -104,7 +115,6 @@ section.parent .flex-container .content h1 {
 
 section.parent .flex-container .content form {
   margin-top: 30px;
-
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -350,4 +360,105 @@ section.parent .flex-container .content .card span {
 }
 .error {
   border: 2px solid #f12222 !important;
+}
+
+/* report */
+
+section.parent .flex-container .content .Income-report {
+  width: 100%;
+  padding: 20px;
+  background: #e1c0cd;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  border-radius: 5px;
+}
+section.parent .flex-container .content .Income-report span {
+  width: 25%;
+}
+section.parent .flex-container .content .expense-report {
+  padding: 20px;
+  background: #e1c0cd;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  border-radius: 5px;
+}
+section.parent .flex-container .content .recent-item {
+  width: 70%;
+  padding: 20px;
+  height: 60px;
+  background-color: #cf97aa;
+  border-radius: 10px;
+  display: flex;
+  gap: 25px;
+}
+section.parent .flex-container .content .recent-item span {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* responsive */
+
+/* dashboard */
+
+@media screen and (max-width: 640px) {
+  section.parent .flex-container .content .cards {
+    grid-template-columns: 1fr;
+  }
+  section.parent .flex-container .content .card h2 {
+    font-size: 20px;
+  }
+  section.parent .flex-container .content .recent-Income {
+    padding: 10px;
+    display: none;
+
+    width: 80%;
+  }
+  section.parent .flex-container .content .recent-Expense {
+    padding: 10px;
+    width: 80%;
+    display: none;
+  }
+
+  section.parent .flex-container .content .recent-item {
+    width: 100%;
+  }
+
+  section.parent .flex-container .content .recent-item span {
+    width: 80%;
+  }
+
+  section.parent .flex-container .content .recent-item span:nth-child(2) {
+    display: none;
+  }
+
+  section.parent .flex-container .content form {
+    width: 100%;
+  }
+
+  section.parent .flex-container .content form .btn {
+    width: 100%;
+  }
+
+  section.parent .flex-container .content .budget {
+    width: 100%;
+    display: none;
+  }
+  section.parent .flex-container .content .saving {
+    display: none;
+  }
+  section.parent .flex-container .content .category {
+    display: none;
+  }
+  section.parent .flex-container .content .income {
+    display: none;
+  }
+  section.parent .flex-container .content .expense {
+    display: none;
+  }
 }
