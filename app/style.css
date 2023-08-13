@@ -180,6 +180,7 @@ section.parent .flex-container .content .recent-item {
 section.parent .flex-container .content .recent-item span {
   width: 25%;
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 section.parent .flex-container .content .categories {
@@ -219,6 +220,7 @@ section.parent .flex-container .content .budget {
 section.parent .flex-container .content .budget span {
   width: 30%;
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 section.parent .flex-container .content .category {
@@ -268,16 +270,19 @@ section.parent .flex-container .content .category span {
 section.parent .flex-container .content .income span {
   width: 25%;
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 section.parent .flex-container .content .expense span {
   width: 25%;
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 section.parent .flex-container .content .category p {
   width: 60%;
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 section.parent .flex-container .content .saving {
@@ -291,6 +296,7 @@ section.parent .flex-container .content .saving {
 }
 section.parent .flex-container .content .saving span {
   display: flex;
+  align-items: center;
   gap: 10px;
   width: 25%;
 }
