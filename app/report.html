@@ -31,19 +31,19 @@
             <img src="./images/budget.svg" alt="" />
             <a href="./budget.html">Budget</a>
           </div>
-          <div class="Budget flex">
+          <div class="category flex">
             <img src="./images/category.svg" alt="" />
-            <a href="#">Category</a>
+            <a href="./category.html">Category</a>
           </div>
-          <div class="Category flex">
+          <div class="Income flex">
             <img src="./images/income.svg" alt="" />
             <a href="./income.html">Income</a>
           </div>
-          <div class="Income flex">
-            <img src="./images/expense.svg" alt="" />
-            <a href="./expense.html">Expense</a>
-          </div>
           <div class="Expense flex">
+            <img src="./images/expense.svg" alt="" />
+            <a href="expense.html">Expense</a>
+          </div>
+          <div class="Saving flex">
             <img src="./images/savings.svg" alt="" />
             <a href="./saving.html">Saving</a>
           </div>
@@ -61,31 +61,53 @@
             </div>
           </div>
           <section class="content-info">
-            <h1>Category</h1>
+            <h1>Reports</h1>
 
-            <form>
-              <label for="">Name</label>
-              <input type="text" id="name" placeholder="enter name" />
-              <label for=""> description</label>
-              <textarea
-                type="text"
-                id="description"
-                placeholder="enter description"
-              ></textarea>
-              <button class="btn" id="addCat">+ Add Category</button>
-            </form>
-
-            <div class="categories">
-              <div class="category">
-                <span>Name</span>
-                <p>Description</p>
+            <div class="recent-Income">
+              <h2>Income Report</h2>
+              <div class="recent-item">
+                <span>date</span>
+                <span>budgetId</span>
+                <span>amount</span>
               </div>
+              <!-- <div class="recent-item">
+                <span>bid0000</span>
+                <span>9-7-2023</span>
+                <span>500</span>
+              </div> -->
+            </div>
+            <div style="margin-top: 30px">
+              <button
+                class="btn"
+                style="width: 100px; margin-top: 20px"
+                id="print"
+              >
+                Print
+              </button>
+            </div>
+
+            <div class="recent-Expense">
+              <h2>Expense Report</h2>
+              <div class="recent-item">
+                <span>date</span>
+                <span>budgetId</span>
+                <span>amount</span>
+              </div>
+            </div>
+            <div style="margin-top: 30px">
+              <button
+                class="btn"
+                style="width: 100px; margin-top: 20px"
+                id="print"
+              >
+                Print
+              </button>
             </div>
           </section>
         </div>
       </div>
     </section>
 
-    <script src="./category.js"></script>
+    <script src="./report.js"></script>
   </body>
 </html>
