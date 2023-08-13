@@ -79,6 +79,7 @@ section.show-case {
 .show-case .hero .left p {
   font-size: 20px;
 }
+
 .btn {
   padding: 10px 15px;
   border: none;
@@ -177,6 +178,9 @@ small {
     grid-template-columns: 1fr;
   }
 
+  .show-case .hero .left button {
+    width: 100%;
+  }
   section.blogs .posts {
     grid-template-columns: 1fr;
   }
